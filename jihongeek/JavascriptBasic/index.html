@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기초 자바스크립트</title>
+</head>
+<body>
+    <h1>자바스크립트 기초</h1>
+
+    <p>
+        <h3><code>onclick</code> 속성</h3>
+        html 속성으로 속성 값에 해당하는 자바스크립트 코드를 
+        <strong>해당 요소가 클릭 되었을 때(클릭 이벤트 발생) </strong> 실행!
+        <h4>
+            예시
+        </h4>
+        <pre>
+            < input type="button" value = "dark" onclick ="
+                // 여기서 부터 자바스크립트
+                /*
+                    버튼을 클릭하면, 버튼 이벤트가 발생하고
+                    현재 문서 html 태그 중에서 css 선택자가 'body' 즉 body 태그를 선택하고
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'black'으로 바꿔서 배경색을 바꾸어 주는 코드
+                */
+                document.querySelector('body').style.backgroundColor = 'black';
+            ">
+        </pre>
+        <h5>실행 해보기 : black</h5>
+            <input type="button" value = "배경을 검정색으로!" onclick ="
+                // 여기서 부터 자바스크립트
+                /*
+                    버튼을 클릭하면, 버튼 이벤트가 발생하고
+                    현재 문서 html 태그 중에서 css 선택자가 'body' 즉 body 태그를 선택하고
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'black'으로 바꿔서 배경색을 바꾸어 주는 코드
+                */
+                document.querySelector('body').style.backgroundColor = 'black';
+            ">
+        <h5>실행 해보기 : white</h5>
+            <input type="button" value = "배경 하얀색으로!" onclick ="
+                // 여기서 부터 자바스크립트
+                /*
+                    버튼을 클릭하면, 버튼 이벤트가 발생하고
+                    현재 문서 html 태그 중에서 css 선택자가 'body' 즉 body 태그를 선택하고
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'white'으로 바꿔서 배경색을 바꾸어 주는 코드
+                */
+                document.querySelector('body').style.backgroundColor = 'white';
+            ">
+    </p>
+        <h5>실행 해보기 : 다크모드</h5>
+            <input type="button" value = "다크모드로!" onclick ="
+                // 여기서 부터 자바스크립트
+                /*
+                    버튼을 클릭하면, 버튼 이벤트가 발생하고
+                    현재 문서 html 태그 중에서 css 선택자가 'body' 즉 body 태그를 선택하고
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'black'으로, 글자색을  'white' 바꿔서 배경색과 글자색 바꾸어 주는 코드
+                */
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+            ">
+        <h5>실행 해보기 : 라이트모드 </h5>
+            <input type="button" value = "라이트모드로!" onclick ="
+                // 여기서 부터 자바스크립트
+                /*
+                    버튼을 클릭하면, 버튼 이벤트가 발생하고
+                    현재 문서 html 태그 중에서 css 선택자가 'body' 즉 body 태그를 선택하고
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'white'으로 바꿔서 배경색을 바꾸어 주는 코드
+                    body 태그의 스타일 속성 중 배경색 속성 값을 'white'으로, 글자색을  'black' 바꿔서 배경색과 글자색 바꾸어 주는 코드
+                */
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+            ">
+</body>
+</html>
