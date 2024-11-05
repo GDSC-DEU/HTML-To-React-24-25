@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Use Conditional</title>
+</head>
+<body>
+    <h1>WEB</h1>
+    
+    <!--night_day라는 id를 가진 버튼을 만들고, 버튼을 클릭했을 때의 이벤트를 작성-->
+    <input id="night_day" type="button" value="night" onclick="     // 버튼을 클릭했을 때
+        if(document.querySelector('#night_day').value === 'night'){     // 만약 버튼의 value가 night라면
+            document.querySelector('body').style.backgroundColor = 'black';     // body태그의 배경색을 검정색으로
+            document.querySelector('body').style.color = 'white';    // body태그의 글자색을 흰색으로
+            document.querySelector('#night_day').value = 'day';     // 버튼의 value를 day로
+        } else {        // 그렇지 않다면
+            document.querySelector('body').style.backgroundColor = 'white';     // body태그의 배경색을 흰색으로
+            document.querySelector('body').style.color = 'black';       // body태그의 글자색을 검정색으로
+            document.querySelector('#night_day').value = 'night';       // 버튼의 value를 night로
+        }
+    ">
+    <!--ordered list-->
+    <ol>
+        <!--list item-->
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+</body>
+</html>

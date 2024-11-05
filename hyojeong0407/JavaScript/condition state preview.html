@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Condition State Preview</title>
+</head>
+<body>
+    <h1>Html</h1>
+    <!--조건문이란? 조건에 따라 다른 순서의 기능이 실행되도록 하는것-->
+    
+    <input type="button" value="day" onclick="    // 버튼을 클릭했을 때
+    if(document.querySelector('body').dataset.mode === 'day'){      // 만약 body태그의 data-mode속성이 day라면
+        document.querySelector('body').style.backgroundColor = 'black';     // body태그의 배경색을 검정색으로
+        document.querySelector('body').style.color = 'white';       // body태그의 글자색을 흰색으로
+        document.querySelector('body').dataset.mode = 'night';      // body태그의 data-mode속성을 night로
+        this.value = 'day';    // 버튼의 value를 day로
+    }
+    else{    // 그렇지 않다면
+        document.querySelector('body').style.backgroundColor = 'white';     // body태그의 배경색을 흰색으로
+        document.querySelector('body').style.color = 'black';       // body태그의 글자색을 검정색으로
+        document.querySelector('body').dataset.mode = 'day';        // body태그의 data-mode속성을 day로
+        this.value = 'night';       // 버튼의 value를 night로
+    }">
+</body>
+</html>
