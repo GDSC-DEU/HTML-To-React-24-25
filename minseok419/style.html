@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Web JavaScript</title>
 </head>
 <body>
-    <imput type="button" value="night" onclick="
-        document.queryselector('body').style.backgroundCOlor = 'black';
-        document.queryselector('body').style.COlor = 'white';
-    "></imput>
+    <h1 style = color:green >배경 바꾸기</h1>
+    <input type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if(this.value === 'night') {
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+            this.value = 'day';
+
+            var links = document.querySelectorAll('a');
+            var i = 0;
+            while(i<links.length) {
+                links[1].style.color='powderblue';
+                i=i+1;
+            }
+        } else {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            this.value = 'night';
+
+            var links = document.querySelectorAll('a');
+            var i = 0;
+            while(i<links.length) {
+                links[1].style.color='blue';
+                i=i+1;
+            }
+        }
+    ">
 </body>
 </html>
