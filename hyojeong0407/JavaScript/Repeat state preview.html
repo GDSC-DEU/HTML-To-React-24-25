@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Repeat State Preview</title>
+</head>
+<body>
+    <h1><a href="">WEB</a></h1>
+    <!--반복문이란? 프로그램 내에서 똑같은 명령을 일정 횟수만큼 반복하여 수행하도록 제어하는 명령문-->
+
+    <input type="button" value="night" onclick="        // 버튼을 클릭했을 때
+        var target = document.querySelector('body');    // target에 body태그 저장
+        if(this.value === 'night'){     // 만약 버튼의 value가 night라면
+            target.style.backgroundColor = 'black';     // body태그의 배경색을 검정색으로
+            target.style.color = 'white';       // body태그의 글자색을 흰색으로
+            this.value = 'day';     // 버튼의 value를 day로
+
+            var links = document.querySelectorAll('a');     // links에 a태그 저장
+            var i = 0;      // i에 0 저장
+            while(i < links.length){    // i가 links의 길이보다 작을 때까지
+                links[i].style.color = 'powderblue';    // links의 i번째의 글자색을 파우더블루로
+                i += 1;    // i에 1 더하기
+            }
+        } else {    // 그렇지 않다면
+            target.style.backgroundColor = 'white';     // body태그의 배경색을 흰색으로
+            target.style.color = 'black';       // body태그의 글자색을 검정색으로
+            this.value = 'night';       // 버튼의 value를 night로
+
+            var links = document.querySelectorAll('a');     // links에 a태그 저장
+            var i = 0;      // i에 0 저장
+            while(i < links.length){        // i가 links의 길이보다 작을 때까지
+                links[i].style.color = 'blue';    // links의 i번째의 글자색을 파란색으로
+                i += 1;     // i에 1 더하기
+            }
+        }
+    ">
+    <ol>
+        <li><a href="">HTML</a></li>
+        <li><a href="">CSS</a></li>
+        <li><a href="">JavaScript</a></li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array</h1>      <!--배열-->
+    <!--배열이란? 같은 타입의 변수들로 이루어진 유한 집합-->
+
+    <h2>Syntax</h2>     <!--문법-->
+    <script>
+        var coworkers = ["egoing", "leezche"];  // 배열 coworkers에 egoing과 leezche 저장
+    </script>
+
+    <h2>get</h2>    <!--가져오기-->
+    <script>
+        document.write(coworkers[0]);   // coworkers의 0번째 요소 출력
+        document.write('<br>');
+        document.write(coworkers[1]);   // coworkers의 1번째 요소 출력
+    </script>
+
+    <h2>add</h2>    <!--추가-->
+    <script>
+        coworkers.push('duru<br>');     // coworkers에 duru 추가
+        coworkers.push('taeho');        // coworkers에 taeho 추가
+        document.write(coworkers[2]);   // coworkers의 2번째 요소 출력
+        document.write(coworkers[3]);   // coworkers의 3번째 요소 출력
+    </script>
+
+    <h2>count</h2>      <!--개수-->
+    <script>
+        document.write(coworkers.length);       // coworkers의 길이 출력
+    </script>
+</body>
+</html>

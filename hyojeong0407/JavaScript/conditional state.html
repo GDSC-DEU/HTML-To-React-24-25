@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional State</title>
+</head>
+<body>
+    <h1>Conditional statements</h1>     <!--조건문-->
+    <h2>Program</h2>
+    <script>
+        document.write("1<br>");
+        document.write("2<br>");
+        document.write("3<br>");
+        document.write("4<br>");
+    </script>
+
+    <!--if문에는 조건이 있어야 하지만 이 코드는 쓸모없는 코드..-->
+    <h2>IF-true</h2>    <!--if문이 참일 때-->
+    <script>
+        document.write("1<br>");    // 1 출력
+        if(true){   // if문이 참이므로
+            document.write("2<br>");    // 2 출력 O
+        } else{     // 그렇지 않다면
+            document.write("3<br>");    // 3 출력 X
+        }
+        document.write("4<br>");    // 4 출력
+    </script>
+
+    <h2>IF-false</h2>   <!--if문이 거짓일 때-->
+    <script>
+        document.write("1<br>");    // 1 출력
+        if(false){      // if문이 거짓이므로
+            document.write("2<br>");    // 2 출력 X
+        } else{
+            document.write("3<br>");    // 3 출력 O
+        }
+        document.write("4<br>");    // 4 출력
+    </script>
+</body>
+</html>

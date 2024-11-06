@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Refactoring</title>
+</head>
+<body>
+    <h1>WEB</h1>
+    <!--Refactoring이란? 코드의 비효율적인 것을 제거하고 중복코드를 개선하는 등 코드를 깔끔히 정리해주는 것-->
+
+    <input type="button" value="night" onclick="    // 버튼을 클릭했을 때
+        var target = document.querySelector('body');    // target에 body태그 저장
+        if(this.value === 'night'){     // 만약 버튼의 value가 night라면
+            target.style.backgroundColor = 'black';     // body태그의 배경색을 검정색으로
+            target.style.color = 'white';       // body태그의 글자색을 흰색으로
+            this.value = 'day';     // 버튼의 value를 day로
+        } else {        // 그렇지 않다면
+            target.style.backgroundColor = 'white';     // body태그의 배경색을 흰색으로
+            target.style.color = 'black';       // body태그의 글자색을 검정색으로
+            this.value = 'night';       // 버튼의 value를 night로
+        }
+    ">
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+</body>
+</html>
