@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>나의 투두리스트</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" id = 'todo' placeholder="제목"> 
+    <input type="button" value="추가" onclick="add()">
+
+    <ol id = "todolist"></ol>
+
+    <script>
+        function add(){
+        const todoinput = document.querySelector('#todo');
+        const todotext = todoinput.value.trim(); //trim() - 좌우 공백 제거 함수
+
+        if(todotext === ""){
+            alert("할 일의 제목을 입력해주세요!");
+        }else {
+            const todolist = document.querySelector('#todolist');
+            const inputlist = document.createElement('li'); //creatElement - 태그를 형성해서 돌려주는 함수
+            inputlist.innerHTML += todotext;
+            todolist.appendChild(inputlist); //노드 객체만 자식 요소로 추가 가능
+            todoinput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
