@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>반복문</title>
+</head>
+<body>
+    <h1>Loop</h1>
+    <ul>
+    <script>
+        document.write('<li>1</li>');
+        var i = 0;
+        while(i<3){
+        document.write('<li>2</li>');
+        document.write('<li>3</li>');
+        i = i+1;
+    }
+        document.write('<li>4</li>');
+    </script>
+    </ul>
+
+    <h1>Loop & Array</h1>
+    <script>
+        var coworkers = ['egoing','leezche','duru','taeho'];
+    </script>
+
+    <h2>Co workers</h2>
+        <ul>
+        <script>
+            var i = 0
+            while(i < coworkers.length){ //배열의 크기에 맟춰 자동으로 나타나짐
+            document.write('<li>'+coworkers[i]+'</li>');
+            i = i + 1;
+            }
+        </script>
+        </ul>
+</body>
+</html>
+
