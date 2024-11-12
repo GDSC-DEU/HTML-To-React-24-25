@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Use function</title>     <!--함수 사용-->
+    <script>
+        function nightDayHandler(self){     // 함수 nightDayHandler 선언
+            var target = document.querySelector('body');    // target에 body 요소 할당
+            if(self.value === 'night'){     // self의 value가 night일 때
+                target.style.backgroundColor = 'black';     // target의 배경색을 검정으로 변경
+                target.style.color = 'white';       // target의 글자색을 흰색으로 변경
+                self.value = 'day';     // self의 value를 day로 변경
+
+                var alist = document.querySelectorAll('a');     // alist에 a 요소들을 할당
+                var i = 0;      // 변수 i에 0을 할당
+                while(i < alist.length){        // i가 alist의 길이보다 작을 때까지 반복
+                    alist[i].style.color = 'powderblue';        // alist의 i번째 요소의 글자색을 파우더블루로 변경
+                    i += 1;     // i에 1을 더함
+                }
+            } else {        // self의 value가 night이 아닐 때
+                target.style.backgroundColor = 'white';     // target의 배경색을 흰색으로 변경
+                target.style.color = 'black';       // target의 글자색을 검정으로 변경
+                self.value = 'night';       // self의 value를 night로 변경
+
+                var alist = document.querySelectorAll('a');     // alist에 a 요소들을 할당
+                var i = 0;    // 변수 i에 0을 할당
+                while(i < alist.length){        // i가 alist의 길이보다 작을 때까지 반복
+                    alist[i].style.color = 'blue';      // alist의 i번째 요소의 글자색을 파란색으로 변경
+                    i += 1;     // i에 1을 더함
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><a href="">WEB</a></h1>
+    
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">      <!--night_day 버튼을 클릭하면 nightDayHandler 함수 호출-->
+
+    <ol>
+        <li><a href="">HTML</a></li>
+        <li><a href="">CSS</a></li>
+        <li><a href="">JavaScript</a></li>
+    </ol>
+</body>
+</html>

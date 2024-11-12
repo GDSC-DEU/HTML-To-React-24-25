@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loop & Array</title>
+</head>
+<body>
+    <h1>Loop & Array</h1>    <!--반복문과 배열-->
+    <script>
+        var coworkers = ['egoing', 'leezche', 'duru', 'taeho'];     // 배열 coworkers에 4개의 문자열을 할당
+    </script>
+    <h2>Co workers</h2>     <!--동료들-->
+    <ul>
+        <script>
+            var i = 0;      // 변수 i에 0을 할당
+            while(i < coworkers.length){        // i가 coworkers의 길이보다 작을 때까지 반복
+                document.write('<li><a href="http://a.com/' + coworkers[i] + '">' + coworkers[i] + '</li>');        // coworkers의 i번째 요소를 출력
+                i += 1;     // i에 1을 더함
+            }
+        </script>
+    </ul>
+</body>
+</html>
