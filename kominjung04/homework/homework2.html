@@ -53,11 +53,11 @@
             del.value = '삭제';
             inputlist.appendChild(del);
             del.onclick = function(){
-                todolist.removeChild(inputlist);
                 //indexOf - 찾으려는 값과 정확하게 일치하는 첫번째 인덱스 리턴
                 //array.from - 객체를 배열로 바꾸는 함수
                 const index = Array.from(todolist.children).indexOf(inputlist);
                 dele(index);
+                todolist.removeChild(inputlist);
             };
 
 
