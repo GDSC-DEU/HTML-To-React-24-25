@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 투두리스트</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" placeholder="제목" value = ""/> <input type ="button" value="추가" onclick="
+    addTask()"/><input type ="button" value="삭제" onclick="
+    deleteTask()"/>
+
+    <ol>
+    </ol>
+    <script>
+        var tasks = [];
+        var checkArray = [];
+        for (var i = 0; i < tasks.length; i++) {
+          checkArray.push(false);
+        }
+        console.log(tasks);
+        function refresh() {
+          console.log(tasks);
+          document.querySelector('ol').innerHTML = '';
+          for (var i = 0; i < tasks.length; i++) {
+            document.querySelector('ol').innerHTML += '<li>' + tasks[i] + ' <input type="checkbox"  onchange="check('+ i +',this.checked)"/>' + '</li>';
+          }
+          for (var i = 0; i < tasks.length; i++) {
+            checkArray.push(false);
+          }
+        }
+        function check(index,value)
+        {
+          checkArray[index] = value;
+        }
+        function deleteTask(){
+          var newTasks = [];
+          for (var i = 0; i < tasks.length; i++) {
+            if (checkArray[i] === false) {
+              newTasks.push(tasks[i]);
+            }
+          }
+          tasks = newTasks;
+          checkArray = [];
+          refresh();
+        }
+        function addTask() {
+          if (document.querySelector('input').value != '') {
+            tasks.push(document.querySelector('input').value);
+            document.querySelector('input').value = '';
+            refresh();
+          }
+          else {
+            alert('할 일의 제목을 입력해주세요!!');
+          }
+        }
+    </script>
+</body>
+</html>
