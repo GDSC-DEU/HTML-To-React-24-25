@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .js{
+            font-weight:bold;
+        }
+        #first{
+            color:green;
+        }
+        span{
+            color:blue;
+        }
+        </style>
+        <meta charset="utf-8">
+        <title>Java script class</title>
+    </head>
+    <body>
+
+        <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor ='black';
+        document.querySelector('body').style.color='white';
+        ">
+
+        <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor ='white';
+        document.querySelector('body').style.color='black';
+        ">
+
+        <input id="night_day" type="button" value="night" onclick="
+        var target = document.querySelector('body');
+        if(document.querySelector('#night_day').value === 'night'){
+        target.style.backgroundColor ='black';
+        target.style.color='white';
+        document.querySelector('#night_day').value ='day';
+        } else{
+        target.style.backgroundColor ='white';
+        target.style.color='black';
+        document.querySelector('#night_day').value = 'night';
+        }
+        ">
+
+
+        <h3>ID가 가장 높은 우선 선택자이고 그다음이 클래스 그 다음이 span묶음이다.</h3>
+        <!--#을 붙이는 것은 ID를 의미하고 .을 붙이는 것은 class 를 의미한다.-->
+        <h3>클래스는 그룹핑 하는것 id는 식별하기 위한것 </h3>
+        <h1>JavaScript</h1>
+        <span id="first">JavaScript</span>
+        <sapn class="js">JavaScript</sapn> <!--클래스를 js로 바꾸고 헤드에 위와 같이 쓰면 다 바뀜-->
+        <div>전체를 씀</div>
+        <span>전체를 쓰지 않음</span>
+        <span style= "font-weight:bold;"></span>
+        <div>
+            순서대로 여러 기능을 작동 시키는것이 프로그램
+            시간이 순서에 따라서 실행되는 프로그램
+            다만 html 은 시간의 순서에 따라 실행이 안됨
+            js는 다름 
+
+        </div>
+        <h1>
+            Array
+        </h1>
+        <script>
+        var coworkers = ["egoing","leezche"];
+            
+        </script>
+        <h2>get</h2>
+        <scrpit>
+
+        </scrpit>
+        
+    </body>
+    </html>
