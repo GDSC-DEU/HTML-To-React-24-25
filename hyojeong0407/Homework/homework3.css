@@ -1,0 +1,20 @@
+body {
+    text-align: center;     /* 가운데 정렬 */
+    justify-content: center;        /* 가로 중앙 정렬 */
+    align-items: center;        /* 세로 중앙 정렬 */
+    background: linear-gradient(90deg, LightCoral, LightPink);      /* 선형 그라데이션 */
+}
+
+#todoContainer {        /* 할 일 목록 컨테이너 */
+    margin: 20px;       /* 바깥 여백 */
+    background-color: #fff;     /* 배경색 */
+    padding: 10px;      /* 안쪽 여백 */
+    border-radius: 10px;        /* 테두리 모서리 둥글게 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);        /* 그림자 */
+    text-align: center;     /* 가운데 정렬 */
+    list-style-position: inside;        /* 목록 마커 위치 */
+}
+
+li{     /* 목록 항목 */
+    padding: 5px;
+}
