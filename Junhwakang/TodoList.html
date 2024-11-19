@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .todo-container {
+      max-width: 500px;
+      margin: 0 auto; /*가운데 정렬*/
+    }
+    ul {    /*할 일을 담는 리스트 ul 태그*/
+      list-style-type: none;
+      padding: 0; /*안쪽 여백 영역*/
+    }
+    li { /*할 일 항목의 스타일 지정*/
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #f4f4f4;
+      display: flex; /*내부 요소를 가로로 배치*/
+      justify-content: space-between; /*양쪽 끝에 요소를 배치*/
+      align-items: center; /*세로로 중앙 정렬*/
+    }
+    button {
+      margin-left: 5px;
+    }
+    .priority {
+      color: red;
+      font-weight: bold;
+    }
+    .task-number{
+        font-weight: bold;
+        margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h2>ToDo List</h2>
+    <input type="text" id="taskInput" placeholder="할 일을 입력해주세요!"> 
+    <!-- 할 일을 입력해주는 텍스트 창-->
+    <button onclick="addTask()">추가</button>
+    <!--할 일 입력을 누르면 추가됨-->
+    <button onclick="deleteAllTasks()">삭제</button>
+    <ul id="taskList"></ul> <!-- 할 일 목록 리스트 -->
+  </div>
+
+  <script>
+    const tasks = []; 
+    /*할 일을 저장하는 배열*/
+
+    function addTask() {
+      /*새로운 할 일을 추가하는 함수*/
+      const taskInput = document.getElementById('taskInput');
+      const taskValue = taskInput.value.trim();
+      /*입력창의 값을 가져옴, 공백 제거*/
+      if (taskValue) {
+        tasks.push({ text: taskValue, priority: false });
+        taskInput.value = '';
+        renderTasks();
+      }
+      /*새로운 할 일을 객체로 배열에 추가, rendertasks 할 일 리스트를 화면에 업데이트*/
+
+    }
+
+    function deleteTask(index) {
+      tasks.splice(index, 1); 
+      renderTasks();
+    }
+
+    function togglePriority(index) {
+      tasks[index].priority = !tasks[index].priority; /*우선순위 값 반전*/
+      renderTasks();
+      /*우선순위를 토글*/
+    }
+
+    function deleteAllTasks() {
+      tasks.length = 0; /*배열의 길이를 0으로 설정하고 삭제*/
+      renderTasks();
+    }
+
+    function renderTasks() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const taskItem = document.createElement('li');
+        taskItem.innerHTML = `
+          <sapn class = "task-number">${index + 1}.</span>
+          <span class="${task.priority ? 'priority' : ''}">${task.text}</span>
+          <div>
+            <button onclick="togglePriority(${index})"> 
+              ${task.priority ? 'Remove Priority' : 'Set Priority'}
+            </button>
+            <button onclick="deleteTask(${index})">Delete</button>
+          </div>
+        `;
+        /*우선순위 변경 , 리스트 항목에 추가 
+        ${} 템플릿 리터럴 js에서 문자열 내에 변수를 삽입할 때 사용함
+         true일때 class ="priority" false이면 빈 문자열로 클래스*/
+        taskList.appendChild(taskItem);
+      });
+    }
+  </script>
+</body>
+</html>
