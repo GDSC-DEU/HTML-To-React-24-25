@@ -1,4 +1,6 @@
 express = require('express');
+cors = require('cors');
+
 const app = express();
 const port = 3000;
 
@@ -29,7 +31,7 @@ const todoListData = {
     }
 }  
 app.use(express.json({ extended: true }));
-
+app.use(cors());
 app.route(`/users/:username/todolist/`)
     .get(function(req,res) {
         let username = req.params.username;
@@ -57,8 +59,8 @@ app.route(`/users/:username/todolist/`)
         });
         res.status(201);
         res.json(req.body);
-    })
-    app.route(`/users/:username/todolist/:id`)
+    });
+app.route(`/users/:username/todolist/:id`)
     .delete(function (req,res){
         let username = req.params.username;
         let id = req.params.id;
