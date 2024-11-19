@@ -39,7 +39,6 @@ app.route(`/users/:username/todolist/`)
             res.status(400).send("올바르지 않은 요청입니다. 전송 데이터를 확인해 주세요");
             return; 
         }
-        console.log
         res.status(200).json(todoListData[username]);
     })
     .post(function(req,res){
