@@ -1,7 +1,7 @@
 .backg{
-    background-color: skyblue;
+    background:linear-gradient(315deg,dodgerblue,cyan);
+    height: 700px;
 }
 .title{
-    background-color: white;
-    color: blue;
+    color: navy;
 }
