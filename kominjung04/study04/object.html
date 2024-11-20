@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var corworks = {
+            "programmer":"egoing",
+            "designer" : "leezche"
+        };
+        document.write("programmer :" + corworks.programmer + "<br>");
+        document.write("designer :" + corworks.designer + "<br>");
+        corworks.bookkeeper = "duru";
+        document.write("bookkeeper :" + corworks.bookkeeper + "<br>");
+        corworks["data scientist"] = "taeho";
+        document.write("data scientist :" + corworks["data scientist"] + "<br>");
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+        for(var key in corworks){
+            document.write(key+' : ' + corworks[key]+'<br>');
+        }
+    </script>
+    
+    <h2>Property & Method</h2>
+    <script>
+        corworks.showAll = function(){
+            for(var key in this){
+                
+            document.write(key+' : ' + this[key]+'<br>');
+            }
+        }
+        corworks.showAll();
+    </script>
+</body>
+</html>
