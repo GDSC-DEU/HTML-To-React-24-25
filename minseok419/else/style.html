@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night') {
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i<alist.length) {
+                    alinks[1].style.color='powderblue';
+                    i = i + 1;
+                }
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length) {
+                    alist[1].style.color='blue';
+                    i = i + 1;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style = color:green >배경 바꾸기</h1>
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+    <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+">
+</body>
+</html>

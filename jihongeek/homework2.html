@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 투두리스트</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" placeholder="제목" value = ""/> <input type ="button" value="추가" onclick="
+    addTask()"/>
+    <ol>
+    </ol>
+    <script>
+        var tasks = [];
+        console.log(tasks);
+        function refresh() {
+          document.querySelector('ol').innerHTML = '';
+          for (var i = 0; i < tasks.length; i++) {
+            document.querySelector('ol').innerHTML += '<li>' + tasks[i] + ' <input type=button value="삭제" onclick="deleteTask('+ i +')"/>' + '</li>';
+          }
+          console.log(tasks);
+        }
+        function deleteTask(index){
+          tasks.splice(index,1);
+          refresh();
+        }
+        function addTask() {
+          if (document.querySelector('input').value !== '') {
+            tasks.push(document.querySelector('input').value);
+            document.querySelector('input').value = '';
+            refresh();
+          }
+          else {
+            alert('할 일의 제목을 입력해주세요!!');
+          }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Objects</h1>    <!--객체-->
+    <h2>Create</h2>      <!--생성-->
+
+    <script>
+        var coworkers = {       // coworkers 객체 생성
+            "programmer" : "egoing",
+            "designer" : "leezche"
+        }
+        document.write("programmer : " + coworkers.programmer + "<br>");        // 객체의 프로퍼티 출력
+        document.write("designer : " + coworkers.designer + "<br>");
+
+        coworkers.bookkeper = "duru";       // 객체에 프로퍼티 추가
+        document.write("bookkeper : " + coworkers.bookkeper + "<br>");      // 추가한 프로퍼티 출력
+
+        coworkers["data scientist"] = "taeho";      // 객체에 프로퍼티 추가
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");     // 추가한 프로퍼티 출력
+
+        console.log(coworkers);     // 객체 출력
+    </script>
+
+    <h2>Iterate</h2>        <!--반복-->
+    <script>
+        for(var key in coworkers) {     // 객체의 프로퍼티를 반복문으로 출력
+            document.write(key + ' : ' + coworkers[key] + '<br>');      // 객체의 프로퍼티 출력
+        }
+    </script>
+
+    <h2>Property & Method</h2>      <!--프로퍼티 & 메소드-->
+    <script>
+        coworkers.showAll = function() {        // 객체에 메소드 추가
+            for(var key in this) {      // 객체의 프로퍼티를 반복문으로 출력
+                document.write(key + ' : ' + this[key] + '<br>');       // 객체의 프로퍼티 출력
+            }
+        }
+
+        coworkers.showAll();        // 객체의 메소드 실행
+    </script>
+</body>
+</html>

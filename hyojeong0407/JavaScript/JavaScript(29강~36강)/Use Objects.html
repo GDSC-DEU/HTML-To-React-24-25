@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Use function</title>
+    <script>
+        var Links = {       // Links 객체 생성
+            setColor : function(color){     // 메소드 생성
+                var alist = document.querySelectorAll('a');     // a 태그 선택
+                var i = 0;      // 반복문 변수
+                while(i < alist.length){        // 변수 i가 a 태그의 개수보다 작을 때까지 반복
+                    alist[i].style.color = color;       // a 태그의 색상 변경
+                    i += 1;     // i 증가
+                }
+            }
+        }
+
+        var Body = {        // Body 객체 생성
+            setColor : function(color){         // 메소드 생성
+                document.querySelector('body').style.color = color;     // body 태그의 색상 변경
+            },
+            setBackgroundColor : function(color){       // 메소드 생성
+                document.querySelector('body').style.backgroundColor = color;       // body 태그의 배경색 변경
+            }
+        }
+
+        function nightDayHandler(self){     // nightDayHandler 함수 생성
+            var target = document.querySelector('body');        // body 태그 선택
+            if(self.value === 'night'){     // self의 value가 night일 때
+                Body.setBackgroundColor('black');       // body 태그의 배경색을 검정색으로 변경
+                Body.setColor('white');     // body 태그의 색상을 흰색으로 변경
+                self.value = 'day';     // self의 value를 day로 변경
+
+                Links.setColor('powderblue');       // a 태그의 색상을 파란색으로 변경
+            } else {
+                Body.setBackgroundColor('white');       // body 태그의 배경색을 흰색으로 변경
+                Body.setColor('black');     // body 태그의 색상을 검정색으로 변경
+                self.value = 'night';       // self의 value를 night로 변경
+
+                Links.setColor('blue');     // a 태그의 색상을 파란색으로 변경
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><a href="">WEB</a></h1>
+    
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">      <!-- nightDayHandler 함수 실행 -->
+
+    <ol>
+        <li><a href="">HTML</a></li>
+        <li><a href="">CSS</a></li>
+        <li><a href="">JavaScript</a></li>
+    </ol>
+</body>
+</html>
