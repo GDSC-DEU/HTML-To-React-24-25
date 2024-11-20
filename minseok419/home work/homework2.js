@@ -19,7 +19,7 @@ const todoApp = {
       this.render(); //삭제할때 진행되는 랜더링
     },
   
-    // 렌더링 메소드
+    // 렌더링 
     render: function () {
       const listElement = document.getElementById('todoList');
       listElement.innerHTML = ''; // 항목 초기화
