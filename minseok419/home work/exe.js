@@ -17,7 +17,7 @@ const todoApp = {
       this.render(); // 삭제할때 진행되는 렌더링
     },
   
-    // 렌더링 메소드
+    // 렌더링 
     render: function () {
       const listElement = document.getElementById('todoList');
       listElement.innerHTML = ''; // 기존 목록을 초기화
