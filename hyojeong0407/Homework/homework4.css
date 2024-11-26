@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, MintCream, MistyRose);
+}
+
+#todoContainer {
+    margin: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    list-style-position: inside;
+}
+
+li {
+    padding: 5px;
+    opacity: 0;     /* 초기 상태에서 투명하게 설정 */
+    animation: fadeIn 1s forwards;      /* 페이드인 애니메이션 적용 */
+}
+
+@keyframes fadeIn {     /* 페이드인 애니메이션 */
+    from {
+        opacity: 0;     /* 시작 상태: 투명 */
+    }
+    to {
+        opacity: 1;     /* 끝 상태: 불투명 */
+    }
+}
