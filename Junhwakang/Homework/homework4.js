@@ -1,14 +1,14 @@
-const API_BASE_URL = "http://146.56.111.208:7080/users/"; // API의 기본 URL
-const tasks = []; // 클라이언트 측 캐시
+const API_BASE_URL = "http://146.56.111.208:7080/users/Junhwakang/todolist"; // API의 기본 URL
+let tasks = []; // 클라이언트 측 캐시
 
 // 초기 할 일 목록 가져오기
 async function fetchTasks() {
   try {
-    const response = await fetch(`${API_BASE_URL}/todos`);
+    const response = await fetch(`${API_BASE_URL}`);
     if (!response.ok) throw new Error("Failed to fetch tasks");
     const data = await response.json();
     tasks.length = 0; // 기존 데이터를 초기화
-    tasks.push(...data); // 서버에서 가져온 데이터를 클라이언트 측에 추가
+    tasks=(data.tasks); // 서버에서 가져온 데이터를 클라이언트 측에 추가
     renderTasks();
   } catch (error) {
     console.error("Error fetching tasks:", error);
@@ -22,10 +22,10 @@ async function addTask() {
   if (!taskValue) return;
 
   try {
-    const response = await fetch(`${API_BASE_URL}/todos`, {
+    const response = await fetch(`${API_BASE_URL}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: taskValue })
+      body: JSON.stringify({ title: taskValue })
     });
     if (!response.ok) throw new Error("Failed to add task");
     const newTask = await response.json();
@@ -40,7 +40,7 @@ async function addTask() {
 // 특정 할 일 삭제
 async function deleteTask(id) {
   try {
-    const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/${id}`, {
       method: "DELETE"
     });
     if (!response.ok) throw new Error("Failed to delete task");
@@ -60,7 +60,7 @@ function renderTasks() {
     const taskItem = document.createElement('li');
     taskItem.innerHTML = `
       <span class="task-number">${index + 1}.</span>
-      <span>${task.text}</span>
+      <span>${task.title}</span>
       <button onclick="deleteTask(${task.id})">Delete</button>
     `;
     taskList.appendChild(taskItem);
