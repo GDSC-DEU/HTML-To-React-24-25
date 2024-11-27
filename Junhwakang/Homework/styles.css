@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
-  <style>
+
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -44,18 +38,3 @@
         font-weight: bold;
         margin-right: 10px;
     }
-  </style>
-</head>
-<body>
-  <div class="todo-container">
-    <h2>ToDo List</h2>
-    <input type="text" id="taskInput" placeholder="할 일을 입력해주세요!"> 
-    <!-- 할 일을 입력해주는 텍스트 창-->
-    <button onclick="addTask()">추가</button>
-    <!--할 일 입력을 누르면 추가됨-->
-    <button onclick="deleteAllTasks()">삭제</button>
-    <ul id="taskList"></ul> <!-- 할 일 목록 리스트 -->
-  </div>
-  <script src="Todolist.js"></script>
-</body>
-</html>
