@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="homework5.css" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+    <title>React에서 주로 사용하는 ES6 문법</title>
+</head>
+<body>
+    <h1>React에서 주로 사용하는 ES6 문법</h1>
+
+    <div class="Arrow">
+        <h3>화살표 함수 (Arrow Function)</h3>
+
+        <p>화살표 함수는 function 키워드 대신 => 기호를 사용하여 함수를 선언하는 방식</p><br>
+
+        <p><strong>Before</strong> => 기존에 사용하는 방식</p>
+        <pre><code class="language-javascript">
+            hello = function() {
+                return "Hello World!";
+            }
+            document.getElementById("before").innerHTML = hello();
+        </code></pre>
+        <p id="before"></p><br>
+
+        <p><strong>After</strong> => ES6 문법을 사용한 방식</p>
+        <pre><code class="language-javascript">
+            hello = () => {
+                return "Hello World!";
+            }
+            document.getElementById("after").innerHTML = hello();
+        </code></pre>
+        <p id="after"></p><br>
+
+        <p>만약 <strong>parameter</strong> 있는 경우</p>
+        <pre><code class="language-javascript">
+            hello = (val) => "Hello " + val;
+    
+            document.getElementById("parameter").innerHTML = hello("User!");
+        </code></pre>
+        <p id="parameter"></p><br>
+    </div><br>
+
+    <div class="Destructuring">
+        <h3>구조 분해 할당 (Destructuring Assignment)</h3>
+
+        <p><strong>Before</strong> => 기존에 사용하는 방식</p>
+        <pre><code class="language-javascript">
+            let vehicles = ['Grandeur', 'Santa Fe', 'Elec City'];
+
+            const car = vehicles[0];
+            const suv = vehicles[1];
+            const bus = vehicles[2];
+
+            document.getElementById("array").innerHTML = car + ", " + suv + ", " + bus;
+        </code></pre>
+        <p id="array"></p><br>
+
+        <p><strong>After</strong> => ES6 문법을 사용한 방식</p>
+        <pre><code class="language-javascript">
+            [car, suv, bus] = vehicles;
+
+            document.getElementById("destructuring").innerHTML = car + ", " + suv + ", " + bus;
+        </code></pre>
+        <p id="destructuring"></p><br>
+
+        <p><strong>원하는 단어만 추출 가능!</strong></p>
+        <pre><code class="language-javascript">
+            [car, , bus] = vehicles;
+
+            document.getElementById("skip").innerHTML = car + ", " + bus;
+        </code></pre>
+        <p id="skip"></p><br>
+
+        <p><strong>Example</strong></p>
+
+        <pre><code class="language-javascript">
+            let vehicleOne = {
+                brand: 'Hyundai',
+                model: 'Grandeur',
+                type: 'Sedan',
+                year: 2022,
+                color: 'Black'
+            }
+        
+            myVehicle(vehicleOne);
+        
+            function myVehicle({model, color, brand}) {
+                const introduce = 'My car is ' + model + ' color is ' + color + ' and brand is ' + brand;
+        
+                document.getElementById("object").innerHTML = introduce;
+            }
+        </code></pre>
+
+        <p id="object"></p><br>
+    </div><br>
+
+    <div class="Spread">
+        <h3>펼침 연산자 (Spread Operator)</h3>
+
+        <p><strong>Example1</strong></p>
+        <pre><code class="language-javascript">
+            let numbersOne = [1, 2, 3];
+            let numbersTwo = [4, 5, 6];
+            let numbersCombined = [...numbersOne, ...numbersTwo];
+        
+            document.getElementById("spread").innerHTML = numbersCombined;
+        </code></pre>
+        <p id="spread"></p><br>
+
+        <p><strong>Example2</strong></p>
+        <pre><code class="language-javascript">
+            let numbers = [1, 2, 3, 4, 5, 6];
+
+            let [one, two, ...rest] = numbers;
+        
+            document.getElementById("One").innerHTML = one;
+            document.getElementById("Two").innerHTML = two;
+            document.getElementById("Rest").innerHTML = rest;
+        </code></pre>
+        <p id="One"></p>
+        <p id="Two"></p>
+        <p id="Rest"></p><br>
+
+        <p><strong>Example3</strong></p>
+        <pre><code class="language-javascript">
+            let myVehicle = {
+                brand: 'Hyundai',
+                model: 'Grandeur',
+                color: 'Black'
+            }
+        
+            let updateMyVehicle = {
+                type: 'Sedan',
+                year: 2022,
+                color: 'White'
+            }
+        
+            let myUpdatedVehicle = {...myVehicle, ...updateMyVehicle};
+        
+            document.getElementById("objectSpread").innerHTML = 'My car is ' + myUpdatedVehicle.model + ' color is ' + myUpdatedVehicle.color + ' and brand is ' + myUpdatedVehicle.brand;
+        </code></pre>
+        <p id="objectSpread"></p><br>
+    </div><br>
+
+    <div class="Import">
+        <h3>모듈 (Import / Export)</h3>
+
+        <p><strong>message.js</strong></p>
+        <pre><code class="language-javascript">
+            const message = () => {
+                const name = "Hyojeong";
+                const age = 22;
+            
+                return name + ' is ' + age + ' years old';
+            };
+            
+            export default message;
+        </code></pre>
+
+        <p id="import"></p><br>
+    </div><br>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="homework5.js"></script>
+    <script type="module">
+        import message from "/message.js";
+
+        document.getElementById("import").innerHTML = message();
+    </script>
+</body>
+</html>
