@@ -11,7 +11,7 @@ const todoManager = {       // 할 일 목록을 관리하는 객체
             const response = await fetch('http://146.56.111.208:7080/users/hyojeong0407/todolist');     // 서버에서 할 일 목록을 가져옴
             const data = await response.json();     // json 형태로 변환
             this.todos = data;      // todos 배열에 할 일 목록을 저장
-            this.nextId = this.todos.length ? Math.max(...this.todos.map(todo => todo.id)) + 1 : 0;     // nextId를 설정
+            this.nextId = this.todos.length ? Math.max(...(this.todos.map(todo => todo.id))) + 1 : 0;     // nextId를 설정
             this.render();      // 할 일 목록을 그림
         } catch (error) {
             console.error('할 일 목록을 가져오는 데 오류 발생:', error);        // 오류 발생 시 콘솔에 출력
@@ -39,7 +39,7 @@ const todoManager = {       // 할 일 목록을 관리하는 객체
                 body: JSON.stringify(todo)      // todo 객체를 json 형태로 변환
             });
             if (!response.ok) throw new Error('할 일 목록을 추가하는 데 실패하였습니다:');      // 응답이 정상적이지 않을 때 오류 발생
-            this.todos.push(todo);      // todos 배열에 todo 객체 추가
+            this.todos.tasks.push(todo);      // todos 배열에 todo 객체 추가
             this.nextId++;      // nextId 증가
             input.value = '';       // input 초기화
             this.render();      // 할 일 목록을 그림
@@ -49,13 +49,13 @@ const todoManager = {       // 할 일 목록을 관리하는 객체
     },
 
     delete: async function(index) {       // 할 일 목록을 삭제하는 함수
-        const todo = this.todos[index];     // 삭제할 할 일 목록
+        const todo = this.todos.tasks[index];     // 삭제할 할 일 목록
         try {
             const response = await fetch(`http://146.56.111.208:7080/users/hyojeong0407/todolist/${todo.id}`, {     // 서버에서 할 일 목록 삭제
-                method: 'DELETE'        // DELETE 방식으로 요청
+                method: 'DELETE',        // DELETE 방식으로 요청
             });
             if (!response.ok) throw new Error('할 일 목록을 삭제하는 데 실패하였습니다:');      // 응답이 정상적이지 않을 때 오류 발생
-            this.todos.splice(index, 1);        // todos 배열에서 해당 할 일 목록 삭제
+            this.todos.tasks.splice(index, 1);      // todos 배열에서 해당 할 일 목록 삭제
             this.render();      // 할 일 목록을 그림
         } catch (error) {
             console.error('할 일 목록을 삭제하는 데 오류 발생:', error);
@@ -67,7 +67,9 @@ const todoManager = {       // 할 일 목록을 관리하는 객체
         const todoList = document.createElement('ol');      // 할 일 목록을 담을 ol 태그
         todoContainer.appendChild(todoList);        // todoContainer에 todoList 추가
 
-        this.todos.forEach((todo, index) => {       // todos 배열을 순회하며 할 일 목록을 그림
+        console.log(this.todos);
+
+        this.todos.tasks.forEach((todo, index) => {       // todos 배열을 순회하며 할 일 목록을 그림
             const listItem = document.createElement('li');      // 할 일 목록을 담을 li 태그
             listItem.innerText = `${todo.title}`;       // 할 일 목록의 제목
 
@@ -82,11 +84,11 @@ const todoManager = {       // 할 일 목록을 관리하는 객체
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    todoManager.render();       // 초기 화면에서 할 일 목록을 그림
+    todoManager.init();       // 초기 화면에서 할 일 목록을 그림
 });
 
 addTodoButton.addEventListener('click', () => {
     todoManager.add(input.value);       // 할 일 목록 추가 버튼 클릭 시 add 함수 호출
 });
 
-// 너무 어러워요 ㅠㅠ
+// 어찌저찌 됐네요 ㅎ..

@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.Arrow {
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Destructuring {
+    background-color: honeydew;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Spread {
+    background-color: peachpuff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Import {
+    background-color: lavender;
+    padding-left: 20px;
+    padding-right: 20px;
+}
