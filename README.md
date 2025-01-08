@@ -13,5 +13,5 @@ GDGoC DEU 24-25의 HTML부터 React까지 공부해보는 스터디
 
 - HTML, CSS, Javascript 기초 문법을 배우고 이를 활용하여 할 일기목록 만들어보기
 - fetch API를 활용하여 백엔드 HTTP API 서버와 통신하여 할 일 목록 정보를 가져오고 추가, 삭제하기
-- React 라이브러리를 통해 할 일 목록을 다시 구현해보제
+- React 라이브러리를 통해 할 일 목록을 다시 구현해 보기
 - 최종적으로 React + Fetch API로 기본적인 할 일 목록 앱을 구현하기
