@@ -1,0 +1,16 @@
+h1 {
+    color: darkblue;
+    text-shadow: 4px 2px 1px lightblue;
+}
+
+input {
+    width: 300px;
+    height: 20px;
+    background-color: lightcyan;
+    border: 1px lightgray solid;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+}
