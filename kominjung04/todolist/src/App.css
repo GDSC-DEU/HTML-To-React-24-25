@@ -1,0 +1,12 @@
+
+button {
+    border-radius: 3px;
+}
+input{
+    border-radius: 3px;
+    width: 200px;
+    height: 18px;
+}
+body{
+    background-color: aqua;
+}
