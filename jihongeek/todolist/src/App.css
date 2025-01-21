@@ -1,0 +1,43 @@
+* {
+    margin : 0;
+    padding : 0;
+  }
+  body {
+    padding-block: 25vh;
+  }
+  #root {
+    max-height: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem
+  }
+  .input-block {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding : 1rem;
+  }
+  .input-block__title-input {
+    padding: 0.5rem; 
+    width: 15vh;
+  }
+  .input-block__add-button {
+    padding: 0.5rem;
+    border: 0;
+    background-color: violet;
+    border-radius: 5px;
+  }
+  .input-block__add-button:hover {
+    cursor: pointer;
+  }
+  
+  .list{
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap:1rem;
+  }
+  
