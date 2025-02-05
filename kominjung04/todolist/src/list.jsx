@@ -1,21 +1,14 @@
 
-const List = () => {
-    const todo = [
-        {title:'과제하기'},
-        {title:'토익공부하기'},
-        {title:'청소하기'},
-
-    ]
-
+const List = ({todos}) => {
 return(
     <ol>
-    {todo.map((list, index) => (
-      <li key={index}>
+    {todos.map((list,index) => (
+      <li key={index} style={{textDecoration: list.isFinished ? "line-through"  : "none"}}>
         {list.title}
       </li>
     ))}
   </ol>
-)
-}
+);
+};
 
 export default List;
