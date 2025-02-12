@@ -1,10 +1,11 @@
 
-const List = ({todos}) => {
+const List = ({todos, onDelete}) => {
 return(
     <ol>
-    {todos.map((list,index) => (
-      <li key={index} style={{textDecoration: list.isFinished ? "line-through"  : "none"}}>
+    {todos.map((list) => (
+      <li key={list.id} style={{textDecoration: list.isFinished ? "line-through"  : "none"}}>
         {list.title}
+        <button onClick={() => onDelete(list.id)}>삭제</button>
       </li>
     ))}
   </ol>
